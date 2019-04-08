@@ -26,8 +26,7 @@ validate = () => {
         e.preventDefault();
 
         const errors = this.validate();
-        console.log(errors);
-        this.setState({ errors });
+        this.setState({ errors: errors || {} });
         if (errors) return;
 
 
@@ -41,7 +40,7 @@ this.setState({ account });
     };
     
     render() { 
-        const { account } = this.state;
+        const { account, errors } = this.state;
         return (
         <div >
         <h1>Login</h1>
@@ -50,11 +49,13 @@ this.setState({ account });
            value={account.username} 
            label="username" 
            onChange={this.handleChange}
+           error={errors.username}
            />
          <Input name="password" 
            value={account.password} 
            label="password" 
            onChange={this.handleChange}
+           error={errors.password}
            />
             <button className="btn btn-primary">Login</button>
             </form>
