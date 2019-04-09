@@ -7,8 +7,7 @@ class RegisterForm extends Form {
 
     state = {
         data: { username: "", password:"", name:""},
-        errors: {}
-        
+        errors: {}     
     };
     schema = {
         username: Joi.string()
@@ -34,7 +33,7 @@ doSubmit = () => {
         <h1>Register</h1>
         <form onSubmit={this.handleSubmit}>
         {this.renderInput('username', 'Username')}
-        {this.renderInput('password', 'Password', "password")}
+        {this.renderInput('password', 'Password',"password")}
         {this.renderInput('name', 'Name')}
          {this.renderButton("Register")}
             </form>
