@@ -36,7 +36,7 @@ class MovieForm extends Form {
      .min(0)
      .max(10)
      .label("Daily Rental Rate")
-  }
+  };
 componentDidMount() {
   const genres = getGenres();
   this.setState({ genres });
@@ -47,10 +47,10 @@ componentDidMount() {
   const movie = getMovies(movieId);
   if (!movie) return this.props.history.replace("/not-found");
 
-  this.setState({ data : this.mapToviewMode(movie)});
+  this.setState({ data : this.mapToViewMode(movie) });
 }
 
-mapToviewMode(movie) {
+mapToViewMode(movie) {
   return {
     _id: movie._id,
     title: movie.title,
@@ -71,9 +71,9 @@ render() {
       <h1>Movie Form  </h1>
       <form onSubmit={this.handleSubmit}>
       {this.renderInput("title", "Title")}
-      {this.renderSelect("genreId", "Genre" , this.state.genres)}
-      {this.renderInput("numberInStock", "Number in Stock", "number")}
-      {this.renderInput("dailyRentalRate", "Rate")}
+      {/* {this.renderSelect("genreId", "Genre" , this.state.genres)} */}
+      {this.renderInput(" numberInStock", "Number in Stock", "number")}
+      {this.renderInput("dailyRentalRate ", "Rate")}
       {this.renderButton("Save")}
 
      </form>
